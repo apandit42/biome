@@ -646,6 +646,7 @@ section#join h2 {
 .team-member {
   margin-bottom: 50px;
   text-align: center;
+  margin: auto; 
 }
 
 .team-member img {
