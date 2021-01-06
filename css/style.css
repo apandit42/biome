@@ -177,7 +177,6 @@ img::-moz-selection {
   letter-spacing: 1px;
   line-height: 1em;
   color: white;
->>>>>>> 9068d2e8b556a6ccaffd426a45f6d6c2dc350b8a
 }
 
 video {
@@ -187,7 +186,6 @@ video {
     position: absolute;
 }
 
-<<<<<<< HEAD
 #reactApp {
     position: relative;
 }
@@ -213,11 +211,11 @@ video {
     text-align: right;
     transform: translateY(-50%);
 }
-=======
+
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 991.98px) {
   #mainNav .container {
-    padding: 7px 0;
+    padding: 7px;
   }
 
   #mainNav .navbar-brand img {
@@ -291,6 +289,7 @@ header.masthead {
   align-items: center;
 }
 
+
 header.masthead .intro-lead-in {
   font-family: 'Playfair Display', serif;
   font-size: 8em;
@@ -302,7 +301,6 @@ header.masthead .intro-heading {
   font-family: 'Alegreya Sans SC', sans-serif;
   font-size: 4em;
   font-weight: 100;
-  text-transform: lowercase;
   line-height: 60px;
   padding-top: 30px;
   margin-bottom: 25px;
@@ -537,8 +535,8 @@ section#join h2 {
     margin-left: -15px;
     margin-top: 15px;
     /* Force Hardware Acceleration in WebKit */
-    -webkit-transform: translateZ(0);
-    -webkit-backface-visibility: hidden;
+    -webkit-transform-: translateZ(0);
+    -webkit-backface-visibility-: hidden;
   }
 }
 
@@ -725,4 +723,3 @@ ul.social-buttons li a:focus,
 ul.social-buttons li a:hover {
   background-color: #fed136;
 }
->>>>>>> 9068d2e8b556a6ccaffd426a45f6d6c2dc350b8a

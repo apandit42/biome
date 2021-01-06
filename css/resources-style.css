@@ -1,0 +1,133 @@
+.layout-grid {
+  display: -ms-grid;
+  display: grid;
+  grid-auto-columns: 1fr;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: auto auto;
+  grid-template-rows: auto auto;
+  grid-row-gap: 16px;
+  grid-column-gap: 16px;
+}
+
+.youtubevideo {
+  width: 100%;
+  position: relative;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  background-image: url('https://d3e54v103j8qbb.cloudfront.net/static/youtube-placeholder.2b05e7d68d.svg');
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+
+.section {
+  margin-top: 0px;
+  padding-bottom: 30px;
+}
+
+.grid {
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  -ms-grid-rows: auto auto auto;
+  grid-template-rows: auto auto auto;
+}
+
+.heading {
+  font-family: 'PT Serif', serif;
+  color: #000;
+  font-weight: 400;
+  text-align: center;
+}
+
+.heading-2 {
+  margin-top: 30px;
+  padding-bottom: 10px;
+  font-family: 'PT Serif', serif;
+  color: #000;
+  font-weight: 300;
+  text-align: center;
+}
+
+.heading-3 {
+  font-family: 'Times New Roman', TimesNewRoman, Times, Baskerville, Georgia, serif;
+  font-weight: 400;
+}
+
+.grid-1 {
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  -ms-grid-rows: auto auto;
+  grid-template-rows: auto auto;
+}
+
+.grid-2 {
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  -ms-grid-rows: auto auto;
+  grid-template-rows: auto auto;
+}
+
+.paragraph {
+  padding-top: 10px;
+  padding-bottom: 15px;
+  font-family: Montserrat, sans-serif;
+  color: #000;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.grid-3 {
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  -ms-grid-rows: auto;
+  grid-template-rows: auto;
+}
+
+.text-span {
+  font-family: 'PT Serif', serif;
+  font-weight: 300;
+}
+
+.text-span-2 {
+  font-weight: 400;
+}
+
+.container {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 940px;
+}
+
+.section-2 {
+  padding-bottom: 40px;
+  background-color: #ececec;
+}
+
+/*------------------------DELETE LATER-----------------------------*/
+
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+[hidden],
+template {
+  display: none;
+}
+
+a {
+  background-color: transparent;
+}
