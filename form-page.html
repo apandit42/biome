@@ -9,7 +9,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
     <style>
-        /* Keep all existing styles */
         :root {
             --primary-color: #2563eb;
             --secondary-color: #1e40af;
@@ -17,16 +16,267 @@
             --light-bg: #f3f4f6;
         }
 
-        /* All your existing styles remain exactly the same until the form section */
-        
-        /* Updated Form Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            line-height: 1.5;
+            color: var(--text-color);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        /* Button Styles */
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: white;
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            font-size: 1.125rem;
+            transition: all 0.2s ease;
+            border: 2px solid white;
+        }
+
+        .cta-button:hover {
+            background-color: transparent;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Animated Background */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, 
+                rgba(255,255,255,0.1) 25%, 
+                transparent 25%, 
+                transparent 50%, 
+                rgba(255,255,255,0.1) 50%, 
+                rgba(255,255,255,0.1) 75%, 
+                transparent 75%, 
+                transparent);
+            background-size: 100px 100px;
+            animation: moveBackground 30s linear infinite;
+            opacity: 0.3;
+        }
+
+        @keyframes moveBackground {
+            0% { background-position: 0 0; }
+            100% { background-position: 100px 100px; }
+        }
+
+        /* Features Section */
+        .features {
+            padding: 4rem 2rem;
+            background-color: var(--light-bg);
+        }
+
+        .features-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 4rem 2rem;
+            background-color: white;
+        }
+
+        .testimonials h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--secondary-color);
+        }
+
+        .testimonials-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--light-bg);
+            padding: 2rem;
+            border-radius: 1rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .testimonial-content {
+            flex-grow: 1;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .quote-icon {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            opacity: 0.3;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-content p {
+            font-size: 1.125rem;
+            line-height: 1.6;
+            color: var(--text-color);
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-info h4 {
+            font-size: 1.125rem;
+            color: var(--secondary-color);
+            margin-bottom: 0.25rem;
+        }
+
+        /* Trust Indicators Section */
+        .trust-section {
+            padding: 2rem;
+            text-align: center;
+            background: white;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .trust-section h3 {
+            font-size: 1.25rem;
+            color: var(--text-color);
+            opacity: 0.8;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+
+        .institutions-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .institution {
+            font-size: 1.25rem;
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+
+        /* Form Section */
+        .form-section {
+            padding: 3rem 2rem 5rem;
+            text-align: center;
+            background: white;
+        }
+
+        .form-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+            font-weight: 800;
+        }
+
+        .form-section p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+        }
+
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        /* Integrated Form Styles */
         .integrated-form {
             display: flex;
             flex-direction: column;
             gap: 1.25rem;
             padding: 2rem;
-            max-width: 600px;
-            margin: 0 auto;
             background: white;
         }
 
@@ -72,15 +322,14 @@
             font-size: 1.125rem;
             font-weight: 600;
             cursor: pointer;
-            transition: background-color 0.2s;
-            width: 100%;
+            transition: all 0.2s ease;
         }
 
         .submit-button:hover {
             background: var(--secondary-color);
+            transform: translateY(-2px);
         }
 
-        /* Form success message */
         #form-success {
             display: none;
             background: #ecfdf5;
@@ -91,7 +340,7 @@
             text-align: center;
         }
 
-        /* Keep your existing responsive styles */
+        /* Responsive Design */
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.5rem;
@@ -104,15 +353,11 @@
             .features-grid {
                 grid-template-columns: 1fr;
             }
-
-            .integrated-form {
-                padding: 1.5rem;
-            }
         }
     </style>
 </head>
 <body>
-    <!-- Keep existing Hero Section -->
+    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <h1>Revolutionize Your Research with LabFlow</h1>
@@ -121,7 +366,7 @@
         </div>
     </section>
 
-    <!-- Keep existing Features Section -->
+    <!-- Features Section -->
     <section class="features">
         <div class="features-grid">
             <div class="feature-card">
@@ -174,7 +419,6 @@
         </div>
     </section>
 
-    <!-- Keep existing Trust Section -->
     <section class="trust-section">
         <h3>Trusted by researchers at leading institutions</h3>
         <div class="institutions-grid">
@@ -185,7 +429,6 @@
         </div>
     </section>
 
-    <!-- Updated Form Section with Formspree -->
     <section id="signup" class="form-section">
         <h2>Sign Up for our Waitlist Below!</h2>
         <p>Join the future of research workflows!</p>
@@ -212,29 +455,4 @@
                 <div class="form-group">
                     <textarea id="interest" name="interest" placeholder="What interests you most about LabFlow? (Optional)"></textarea>
                 </div>
-                <button type="submit" class="submit-button">Join Waitlist</button>
-                <div id="form-success"></div>
-            </form>
-        </div>
-    </section>
-
-    <!-- Add form success handling script -->
-    <script>
-        const form = document.getElementById('waitlist-form');
-        const formSuccess = document.getElementById('form-success');
-
-        form.addEventListener('submit', function(e) {
-            const button = form.querySelector('button');
-            button.disabled = true;
-            button.textContent = 'Submitting...';
-        });
-
-        // Show success message when form is submitted successfully
-        if (window.location.search.includes('submitted=true')) {
-            form.style.display = 'none';
-            formSuccess.style.display = 'block';
-            formSuccess.innerHTML = 'Thank you for joining our waitlist! We\'ll be in touch soon.';
-        }
-    </script>
-</body>
-</html>
+                <button type="submit" class="submit-button">Join Waitlist
