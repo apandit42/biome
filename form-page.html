@@ -429,10 +429,13 @@
         </div>
     </section>
 
+<!-- Keep all your existing code up to the form section -->
+
+<!-- Replace your existing form section with this updated version -->
 <section id="signup" class="form-section">
     <h2>Stay Updated with LabFlow</h2>
     <p class="form-description">
-        Thank you for your interest in LabFlow! We're excited to share updates on our progress, launch announcements, and exclusive insights about our innovative lab protocol platform.
+        Thank you for your interest in LabFlow! We're excited to share updates on our progress.
     </p>
     <div class="form-container">
         <form id="waitlist-form" class="integrated-form" action="https://formspree.io/f/myzzwnjk" method="POST">
@@ -454,31 +457,29 @@
             <div class="form-group">
                 <label>Field of Research/Expertise</label>
                 <div class="checkbox-section">
-                    <div class="checkbox-group">
-                        <div class="checkbox-option">
-                            <input type="checkbox" id="field-biology" name="field[]" value="Biology">
-                            <label for="field-biology">Biology</label>
-                        </div>
-                        <div class="checkbox-option">
-                            <input type="checkbox" id="field-chemistry" name="field[]" value="Chemistry">
-                            <label for="field-chemistry">Chemistry</label>
-                        </div>
-                        <div class="checkbox-option">
-                            <input type="checkbox" id="field-physics" name="field[]" value="Physics">
-                            <label for="field-physics">Physics</label>
-                        </div>
-                        <div class="checkbox-option">
-                            <input type="checkbox" id="field-engineering" name="field[]" value="Engineering">
-                            <label for="field-engineering">Engineering</label>
-                        </div>
-                        <div class="checkbox-option">
-                            <input type="checkbox" id="field-other" name="field[]" value="Other">
-                            <label for="field-other">Other</label>
-                        </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="field-biology" name="field[]" value="Biology">
+                        <label for="field-biology">Biology</label>
                     </div>
-                    <input type="text" id="field-other-text" name="field_other" 
-                           placeholder="Please specify" 
-                           class="other-input">
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="field-chemistry" name="field[]" value="Chemistry">
+                        <label for="field-chemistry">Chemistry</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="field-physics" name="field[]" value="Physics">
+                        <label for="field-physics">Physics</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="field-engineering" name="field[]" value="Engineering">
+                        <label for="field-engineering">Engineering</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="field-other" name="field[]" value="Other">
+                        <label for="field-other">Other</label>
+                        <input type="text" id="field-other-text" name="field_other" 
+                               placeholder="Please specify" 
+                               class="other-input">
+                    </div>
                 </div>
             </div>
             <button type="submit" class="submit-button">Join Waitlist</button>
@@ -486,3 +487,58 @@
         </form>
     </div>
 </section>
+
+<!-- Add these styles to your existing CSS -->
+<style>
+/* Keep all your existing styles and add/update these specific ones */
+.checkbox-section {
+    margin-top: 1rem;
+    padding-left: 0.5rem;
+}
+
+.checkbox-option {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    position: relative;
+}
+
+.checkbox-option input[type="checkbox"] {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin: 0;
+    cursor: pointer;
+}
+
+.checkbox-option label {
+    font-size: 1rem;
+    cursor: pointer;
+    user-select: none;
+    padding-left: 0.25rem;
+}
+
+.other-input {
+    display: none;
+    width: calc(100% - 2.5rem);
+    margin-top: 0.5rem;
+    margin-left: 2rem;
+    padding: 0.5rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.375rem;
+}
+
+#field-other:checked ~ .other-input {
+    display: block;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.submit-button {
+    margin-top: 2rem;
+}
+</style>
+
+<!-- Keep your existing JavaScript -->
