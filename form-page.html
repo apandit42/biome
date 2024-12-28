@@ -430,29 +430,80 @@
     </section>
 
     <section id="signup" class="form-section">
-        <h2>Sign Up for our Waitlist Below!</h2>
-        <p>Join the future of research workflows!</p>
-        <div class="form-container">
-            <form id="waitlist-form" class="integrated-form" action="https://formspree.io/f/myzzwnjk" method="POST">
-                <div class="form-group">
-                    <input type="text" id="name" name="name" required placeholder="Full Name">
+    <h2>Stay Updated with LabFlow</h2>
+    <p class="form-description">
+        Thank you for your interest in LabFlow! We're excited to share updates on our progress, launch announcements, and exclusive insights about our innovative lab protocol platform. Fill out this form to stay connected!
+    </p>
+    <div class="form-container">
+        <form id="waitlist-form" class="integrated-form" action="https://formspree.io/f/myzzwnjk" method="POST">
+            <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required placeholder="Your email">
+            </div>
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name">
+            </div>
+            <div class="form-group">
+                <label for="affiliation">Affiliation/Organization</label>
+                <input type="text" id="affiliation" name="affiliation" placeholder="Your organization">
+            </div>
+            <div class="form-group">
+                <label>Field of Research/Expertise</label>
+                <div class="checkbox-group">
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="field-biology" name="field[]" value="Biology">
+                        <label for="field-biology">Biology</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="field-chemistry" name="field[]" value="Chemistry">
+                        <label for="field-chemistry">Chemistry</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="field-physics" name="field[]" value="Physics">
+                        <label for="field-physics">Physics</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="field-engineering" name="field[]" value="Engineering">
+                        <label for="field-engineering">Engineering</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="field-other" name="field[]" value="Other">
+                        <label for="field-other">Other</label>
+                        <input type="text" id="field-other-text" name="field_other" 
+                            placeholder="Please specify" 
+                            class="other-input"
+                            style="display: none;">
+                    </div>
                 </div>
-                <div class="form-group">
-                    <input type="email" id="email" name="email" required placeholder="Email Address">
-                </div>
-                <div class="form-group">
-                    <select id="role" name="role" required>
-                        <option value="">Select Your Role</option>
-                        <option value="researcher">Researcher</option>
-                        <option value="student">Student</option>
-                        <option value="professor">Professor</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <input type="text" id="institution" name="institution" required placeholder="Institution/Organization">
-                </div>
-                <div class="form-group">
-                    <textarea id="interest" name="interest" placeholder="What interests you most about LabFlow? (Optional)"></textarea>
-                </div>
-                <button type="submit" class="submit-button">Join Waitlist
+            </div>
+            <button type="submit" class="submit-button">Join Waitlist</button>
+            <div id="form-success"></div>
+        </form>
+    </div>
+</section>
+
+<script>
+    const form = document.getElementById('waitlist-form');
+    const formSuccess = document.getElementById('form-success');
+    const otherCheckbox = document.getElementById('field-other');
+    const otherInput = document.getElementById('field-other-text');
+
+    // Show/hide other input field
+    otherCheckbox.addEventListener('change', function() {
+        otherInput.style.display = this.checked ? 'block' : 'none';
+    });
+
+    form.addEventListener('submit', function(e) {
+        const button = form.querySelector('button');
+        button.disabled = true;
+        button.textContent = 'Submitting...';
+    });
+
+    // Show success message when form is submitted successfully
+    if (window.location.search.includes('submitted=true')) {
+        form.style.display = 'none';
+        formSuccess.style.display = 'block';
+        formSuccess.innerHTML = 'Thank you for joining our waitlist! We\'ll be in touch soon.';
+    }
+</script>
