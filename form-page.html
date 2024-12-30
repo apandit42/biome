@@ -368,152 +368,6 @@
             font-size: 1.125rem;
             line-height: 1.6;
         }
-/* Demo Section Styles - Add before @media queries */
-.demo-section {
-    background: white;
-    padding: 6rem 2rem;
-    position: relative;
-    overflow: hidden;
-}
-
-.demo-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(
-        to right,
-        transparent,
-        rgba(37, 99, 235, 0.2),
-        transparent
-    );
-}
-
-.demo-container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.demo-header {
-    text-align: center;
-    margin-bottom: 4rem;
-}
-
-.demo-header h2 {
-    font-size: 2.5rem;
-    font-weight: 800;
-    color: var(--secondary-color);
-    margin-bottom: 1rem;
-    background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.demo-header p {
-    font-size: 1.25rem;
-    color: #6b7280;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.demo-wrapper {
-    background: var(--light-bg);
-    border-radius: 1rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 2rem;
-    margin-bottom: 3rem;
-    transition: all 0.3s;
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    gap: 2rem;
-    align-items: center;
-}
-
-.demo-wrapper:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-}
-
-.demo-wrapper:nth-child(even) {
-    grid-template-columns: 1fr 1.5fr;
-    direction: rtl;
-}
-
-.demo-wrapper:nth-child(even) .demo-content {
-    direction: ltr;
-}
-
-.demo-video {
-    width: 100%;
-    aspect-ratio: 16/9;
-    border-radius: 0.5rem;
-    overflow: hidden;
-    background: white;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.demo-video video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.demo-content {
-    padding: 1rem;
-}
-
-.demo-title {
-    font-size: 1.875rem;
-    color: var(--secondary-color);
-    margin-bottom: 1rem;
-    font-weight: 700;
-    line-height: 1.2;
-}
-
-.demo-description {
-    color: #4b5563;
-    margin-bottom: 1.5rem;
-    font-size: 1.125rem;
-    line-height: 1.6;
-}
-
-.demo-features {
-    display: grid;
-    gap: 1rem;
-}
-
-.demo-feature {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    color: var(--text-color);
-    font-size: 1rem;
-}
-
-.demo-feature i {
-    color: var(--primary-color);
-}
-        
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .email-form {
-                flex-direction: column;
-            }
-
-            .submit-button {
-                width: 100%;
-            }
-
-            .trust-indicator {
-                flex-direction: column;
-                gap: 0.75rem;
-            }
-        }
     </style>
 </head>
 <body>
@@ -590,88 +444,50 @@
             </div>
         </div>
     </section>
-<section class="demo-section">
-    <div class="demo-container">
-        <div class="demo-header">
-            <h2>See LabFlow in Action</h2>
-            <p>Watch how our AI transforms your laboratory workflow</p>
-        </div>
-
-        <div class="demo-wrapper">
-            <div class="demo-video">
-                <video controls muted>
-                    <source src="path-to-your-generate-video.mp4" type="video/mp4">
-                </video>
+    <section class="flow-section">
+    <div class="section-header">
+        <h2>How It Works</h2>
+        <p>Experience seamless protocol management</p>
+    </div>
+    <div class="flow-container">
+        <div class="flow-step">
+            <div class="flow-content">
+                <h3 class="flow-title">Generate Protocols with AI</h3>
+                <p class="flow-description">
+                    Input your experimental goals and let our AI generate detailed, 
+                    accurate protocols tailored to your needs. Save hours of manual writing 
+                    and ensure consistency across your lab.
+                </p>
             </div>
-            <div class="demo-content">
-                <h3 class="demo-title">Protocol Generation</h3>
-                <p class="demo-description">Generate detailed, accurate protocols in seconds using our advanced AI assistant.</p>
-                <div class="demo-features">
-                    <div class="demo-feature">
-                        <i class="fas fa-bolt"></i>
-                        <span>Generate protocols 10x faster</span>
-                    </div>
-                    <div class="demo-feature">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Industry-standard formatting</span>
-                    </div>
-                    <div class="demo-feature">
-                        <i class="fas fa-magic"></i>
-                        <span>Smart template suggestions</span>
-                    </div>
-                </div>
+            <div class="flow-image">
+                <img src="/api/placeholder/600/400" alt="AI Protocol Generation Demo">
             </div>
         </div>
 
-        <div class="demo-wrapper">
-            <div class="demo-video">
-                <video controls muted>
-                    <source src="path-to-your-checklist-video.mp4" type="video/mp4">
-                </video>
+        <div class="flow-step">
+            <div class="flow-image">
+                <img src="/api/placeholder/600/400" alt="Protocol Validation Demo">
             </div>
-            <div class="demo-content">
-                <h3 class="demo-title">Interactive Checklists</h3>
-                <p class="demo-description">Execute protocols flawlessly with interactive checklists and smart timers.</p>
-                <div class="demo-features">
-                    <div class="demo-feature">
-                        <i class="fas fa-list-check"></i>
-                        <span>Step-by-step guidance</span>
-                    </div>
-                    <div class="demo-feature">
-                        <i class="fas fa-clock"></i>
-                        <span>Built-in smart timers</span>
-                    </div>
-                    <div class="demo-feature">
-                        <i class="fas fa-chart-line"></i>
-                        <span>Real-time progress tracking</span>
-                    </div>
-                </div>
+            <div class="flow-content">
+                <h3 class="flow-title">Validate and Optimize</h3>
+                <p class="flow-description">
+                    Our AI validation system automatically checks for errors, 
+                    inconsistencies, and potential optimizations in your protocols, 
+                    ensuring the highest quality standards.
+                </p>
             </div>
         </div>
 
-        <div class="demo-wrapper">
-            <div class="demo-video">
-                <video controls muted>
-                    <source src="path-to-your-validation-video.mp4" type="video/mp4">
-                </video>
+        <div class="flow-step">
+            <div class="flow-content">
+                <h3 class="flow-title">Execute with Confidence</h3>
+                <p class="flow-description">
+                    Follow protocols step-by-step with interactive checklists and 
+                    smart timers. Never miss a step or timing window again.
+                </p>
             </div>
-            <div class="demo-content">
-                <h3 class="demo-title">Protocol Validation</h3>
-                <p class="demo-description">Catch errors and optimize protocols with our AI validation system.</p>
-                <div class="demo-features">
-                    <div class="demo-feature">
-                        <i class="fas fa-shield-alt"></i>
-                        <span>Automatic error detection</span>
-                    </div>
-                    <div class="demo-feature">
-                        <i class="fas fa-lightbulb"></i>
-                        <span>Smart optimization tips</span>
-                    </div>
-                    <div class="demo-feature">
-                        <i class="fas fa-code-branch"></i>
-                        <span>Version control</span>
-                    </div>
-                </div>
+            <div class="flow-image">
+                <img src="/api/placeholder/600/400" alt="Interactive Checklist Demo">
             </div>
         </div>
     </div>
