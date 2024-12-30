@@ -1,35 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-       <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1782994019165763');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1782994019165763&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-    
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F66DC8Q4XE"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-F66DC8Q4XE');
-    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LabFlow - Revolutionize Your Research</title>
+    <title>LabFlow - Stanford-Built Protocol Management Platform</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -39,6 +13,7 @@ src="https://www.facebook.com/tr?id=1782994019165763&ev=PageView&noscript=1"
         :root {
             --primary-color: #2563eb;
             --secondary-color: #1e40af;
+            --accent-blue: #3b82f6;
             --text-color: #1f2937;
             --light-bg: #f3f4f6;
         }
@@ -49,70 +24,26 @@ src="https://www.facebook.com/tr?id=1782994019165763&ev=PageView&noscript=1"
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
             font-family: 'Inter', system-ui, -apple-system, sans-serif;
             line-height: 1.5;
             color: var(--text-color);
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
         }
 
-        /* Hero Section */
         .hero {
             min-height: 100vh;
-            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
             color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            padding: 4rem 2rem;
             text-align: center;
             position: relative;
             overflow: hidden;
         }
 
-        .hero-content {
-            max-width: 800px;
-            padding: 2rem;
-            z-index: 1;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            font-weight: 800;
-        }
-
-        .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        /* Button Styles */
-        .cta-button {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background-color: white;
-            color: var(--primary-color);
-            text-decoration: none;
-            border-radius: 0.5rem;
-            font-weight: 600;
-            font-size: 1.125rem;
-            transition: all 0.2s ease;
-            border: 2px solid white;
-        }
-
-        .cta-button:hover {
-            background-color: transparent;
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        /* Animated Background */
+        /* Animated background patterns */
         .hero::before {
             content: '';
             position: absolute;
@@ -120,28 +51,189 @@ src="https://www.facebook.com/tr?id=1782994019165763&ev=PageView&noscript=1"
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(45deg, 
-                rgba(255,255,255,0.1) 25%, 
-                transparent 25%, 
-                transparent 50%, 
-                rgba(255,255,255,0.1) 50%, 
-                rgba(255,255,255,0.1) 75%, 
-                transparent 75%, 
-                transparent);
-            background-size: 100px 100px;
-            animation: moveBackground 30s linear infinite;
-            opacity: 0.3;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 10%),
+                radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.1) 0%, transparent 10%);
+            animation: floatingBubbles 20s infinite linear;
         }
 
-        @keyframes moveBackground {
-            0% { background-position: 0 0; }
-            100% { background-position: 100px 100px; }
+        @keyframes floatingBubbles {
+            0% { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(-100%) rotate(360deg); }
         }
 
-        /* Features Section */
+        .floating-icons {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+
+        .floating-icon {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.1);
+            animation: float 6s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .stanford-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.75rem 1.5rem;
+            border-radius: 2rem;
+            margin-bottom: 2rem;
+            font-weight: 500;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: badgePulse 2s infinite;
+        }
+
+        @keyframes badgePulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            background: linear-gradient(to right, #fff, #e2e8f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: titleSlide 0.5s ease-out;
+        }
+
+        @keyframes titleSlide {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: subtitleFade 0.5s ease-out 0.2s both;
+        }
+
+        @keyframes subtitleFade {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .email-capture {
+            background: rgba(255, 255, 255, 0.95);
+            max-width: 500px;
+            margin: 2rem auto;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            animation: formSlideUp 0.5s ease-out 0.4s both;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        @keyframes formSlideUp {
+            from { transform: translateY(40px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .email-form {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .email-input {
+            flex-grow: 1;
+            padding: 0.75rem 1rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .email-input:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .submit-button {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            white-space: nowrap;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-button:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .submit-button::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent,
+                rgba(255, 255, 255, 0.1),
+                transparent
+            );
+            transform: rotate(45deg);
+            animation: buttonShine 3s infinite;
+        }
+
+        @keyframes buttonShine {
+            0% { transform: translateX(-100%) rotate(45deg); }
+            20%, 100% { transform: translateX(100%) rotate(45deg); }
+        }
+
         .features {
             padding: 4rem 2rem;
-            background-color: var(--light-bg);
+            background: var(--light-bg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .features::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 10% 10%, rgba(37, 99, 235, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 90% 90%, rgba(37, 99, 235, 0.05) 0%, transparent 50%);
+            pointer-events: none;
         }
 
         .features-grid {
@@ -157,17 +249,46 @@ src="https://www.facebook.com/tr?id=1782994019165763&ev=PageView&noscript=1"
             padding: 2rem;
             border-radius: 1rem;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
         }
 
         .feature-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                45deg,
+                transparent,
+                rgba(37, 99, 235, 0.05),
+                transparent
+            );
+            transform: translateX(-100%);
+            transition: transform 0.6s;
+        }
+
+        .feature-card:hover::after {
+            transform: translateX(100%);
         }
 
         .feature-icon {
             font-size: 2.5rem;
             color: var(--primary-color);
             margin-bottom: 1rem;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1);
         }
 
         .feature-card h3 {
@@ -176,224 +297,113 @@ src="https://www.facebook.com/tr?id=1782994019165763&ev=PageView&noscript=1"
             color: var(--secondary-color);
         }
 
-        /* Testimonials Section */
-        .testimonials {
+        .stanford-footer {
             padding: 4rem 2rem;
-            background-color: white;
-        }
-
-        .testimonials h2 {
+            background: white;
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: var(--secondary-color);
-        }
-
-        .testimonials-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .testimonial-card {
-            background: var(--light-bg);
-            padding: 2rem;
-            border-radius: 1rem;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .testimonial-content {
-            flex-grow: 1;
-            margin-bottom: 1.5rem;
             position: relative;
-        }
-
-        .quote-icon {
-            color: var(--primary-color);
-            font-size: 1.5rem;
-            opacity: 0.3;
-            margin-bottom: 1rem;
-        }
-
-        .testimonial-content p {
-            font-size: 1.125rem;
-            line-height: 1.6;
-            color: var(--text-color);
-            font-style: italic;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .author-info h4 {
-            font-size: 1.125rem;
-            color: var(--secondary-color);
-            margin-bottom: 0.25rem;
-        }
-
-        /* Trust Indicators Section */
-        .trust-section {
-            padding: 2rem;
-            text-align: center;
-            background: white;
-            border-top: 1px solid rgba(0, 0, 0, 0.1);
-        }
-
-        .trust-section h3 {
-            font-size: 1.25rem;
-            color: var(--text-color);
-            opacity: 0.8;
-            font-weight: 500;
-            margin-bottom: 1.5rem;
-        }
-
-        .institutions-grid {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 3rem;
-            flex-wrap: wrap;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .institution {
-            font-size: 1.25rem;
-            color: var(--secondary-color);
-            font-weight: 600;
-        }
-
-        /* Form Section */
-        .form-section {
-            padding: 3rem 2rem 5rem;
-            text-align: center;
-            background: white;
-        }
-
-        .form-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--secondary-color);
-            font-weight: 800;
-        }
-
-        .form-section p {
-            font-size: 1.25rem;
-            margin-bottom: 2rem;
-            opacity: 0.8;
-        }
-
-        .form-container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             overflow: hidden;
         }
 
-        /* Integrated Form Styles */
-        .integrated-form {
-            display: flex;
-            flex-direction: column;
-            gap: 1.25rem;
-            padding: 2rem;
-            background: white;
+        .stanford-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(
+                to right,
+                transparent,
+                rgba(37, 99, 235, 0.2),
+                transparent
+            );
         }
 
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-            text-align: left;
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
         }
 
-        .integrated-form input,
-        .integrated-form select,
-        .integrated-form textarea {
-            width: 100%;
-            padding: 0.75rem 1rem;
-            border: 1px solid #e5e7eb;
-            border-radius: 0.5rem;
-            font-size: 1rem;
-            font-family: inherit;
-            transition: border-color 0.2s;
-            background: white;
+        .stanford-footer h2 {
+            color: var(--secondary-color);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
         }
 
-        .integrated-form input:focus,
-        .integrated-form select:focus,
-        .integrated-form textarea:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-        }
-
-        .integrated-form textarea {
-            min-height: 100px;
-            resize: vertical;
-        }
-
-        .submit-button {
-            background: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 1rem 2rem;
-            border-radius: 0.5rem;
+        .stanford-footer p {
+            color: #6b7280;
             font-size: 1.125rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s ease;
+            line-height: 1.6;
         }
 
-        .submit-button:hover {
-            background: var(--secondary-color);
-            transform: translateY(-2px);
-        }
-
-        #form-success {
-            display: none;
-            background: #ecfdf5;
-            color: #065f46;
-            padding: 1rem;
-            border-radius: 0.5rem;
+        .trust-indicator {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
             margin-top: 1rem;
-            text-align: center;
+            color: #6b7280;
+            font-size: 0.875rem;
         }
 
-        /* Responsive Design */
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.5rem;
             }
 
-            .hero p {
-                font-size: 1.25rem;
+            .email-form {
+                flex-direction: column;
             }
 
-            .features-grid {
-                grid-template-columns: 1fr;
+            .submit-button {
+                width: 100%;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content">
-            <h1>Revolutionize Your Research with LabFlow</h1>
-            <p>AI-driven tools for protocol optimization, validation, and collaboration</p>
-            <a href="#signup" class="cta-button">Sign Up For our Waitlist Here</a>
+        <div class="floating-icons">
+            <!-- Add floating icons as background decoration -->
+            <i class="fas fa-flask floating-icon" style="top: 20%; left: 10%; font-size: 2rem;"></i>
+            <i class="fas fa-dna floating-icon" style="top: 60%; left: 85%; font-size: 3rem;"></i>
+            <i class="fas fa-microscope floating-icon" style="top: 30%; left: 80%; font-size: 2.5rem;"></i>
+            <i class="fas fa-atom floating-icon" style="top: 70%; left: 15%; font-size: 2rem;"></i>
+            <i class="fas fa-vial floating-icon" style="top: 40%; left: 45%; font-size: 1.5rem;"></i>
+        </div>
+
+        <div class="stanford-badge">
+            <i class="fas fa-shield-alt"></i>
+            Built at Stanford Bioengineering
+        </div>
+        
+        <h1>Your Lab Assistant With a Stanford PhD</h1>
+        <p class="hero-subtitle">
+            Save 10+ hours weekly with AI-powered protocol management
+        </p>
+
+        <div class="email-capture">
+            <form class="email-form" action="https://formspree.io/f/myzzwnjk" method="POST">
+                <input 
+                    type="email" 
+                    class="email-input"
+                    placeholder="Enter your work email"
+                    required
+                    name="email"
+                >
+                <button type="submit" class="submit-button">
+                    Get Early Access
+                </button>
+            </form>
+            <div class="trust-indicator">
+                <i class="fas fa-lock"></i>
+                <span>Free for academic researchers</span>
+            </div>
         </div>
     </section>
 
-    <!-- Features Section -->
     <section class="features">
         <div class="features-grid">
             <div class="feature-card">
@@ -401,15 +411,15 @@ src="https://www.facebook.com/tr?id=1782994019165763&ev=PageView&noscript=1"
                     <i class="fas fa-code-branch"></i>
                 </div>
                 <h3>Version Control & Change Tracking</h3>
-                <p>Track and store all protocol revisions with timestamps, authors, and reversion capabilities.</p>
+                <p>Never lose your protocol versions again</p>
             </div>
             
             <div class="feature-card">
                 <div class="feature-icon">
                     <i class="fas fa-file-export"></i>
                 </div>
-                <h3>Wiki Export Functionality</h3>
-                <p>One-click export to iGEM wiki-compatible formats, with citations, safety documentation, and presentation-ready formatting.</p>
+                <h3>Wiki Export</h3>
+                <p>One-click export to iGEM wiki formats</p>
             </div>
             
             <div class="feature-card">
@@ -417,155 +427,39 @@ src="https://www.facebook.com/tr?id=1782994019165763&ev=PageView&noscript=1"
                     <i class="fas fa-database"></i>
                 </div>
                 <h3>Parts Registry Integration</h3>
-                <p>Real-time integration with iGEM Parts Registry, automated compatibility checks, and data retrieval.</p>
+                <p>Seamless iGEM Parts Registry integration</p>
             </div>
-            
             <div class="feature-card">
                 <div class="feature-icon">
                     <i class="fas fa-tasks"></i>
                 </div>
-                <h3>Step-by-Step Experimental Interface</h3>
-                <p>Interactive execution with timers, checklists, and error reduction.</p>
+                <h3>Interactive Protocols</h3>
+                <p>Step-by-step guidance with built-in timers</p>
             </div>
             
             <div class="feature-card">
                 <div class="feature-icon">
                     <i class="fas fa-search"></i>
                 </div>
-                <h3>Protocol Search & Filtering</h3>
-                <p>Advanced search with metadata indexing and robust filtration criteria.</p>
+                <h3>Smart Search</h3>
+                <p>Find any protocol in seconds</p>
             </div>
             
             <div class="feature-card">
                 <div class="feature-icon">
                     <i class="fas fa-robot"></i>
                 </div>
-                <h3>GenAI Protocol Assistant</h3>
-                <p>Automated protocol validation, error detection, missing steps suggestions, and custom protocol generation.</p>
+                <h3>AI Assistant</h3>
+                <p>Catch errors before they happen</p>
             </div>
         </div>
     </section>
 
-    <section class="trust-section">
-        <h3>Trusted by researchers at leading institutions</h3>
-        <div class="institutions-grid">
-            <span class="institution">Stanford</span>
-            <span class="institution">Johns Hopkins</span>
-            <span class="institution">Yale</span>
-            <span class="institution">Cornell</span>
+    <section class="stanford-footer">
+        <div class="footer-content">
+            <h2>Built by Stanford Researchers, for Researchers</h2>
+            <p>Combining expertise in bioengineering, machine learning, and laboratory automation to revolutionize protocol management</p>
         </div>
     </section>
-
-<!-- Keep all your existing code up to the form section -->
-
-<!-- Replace your existing form section with this updated version -->
-<section id="signup" class="form-section">
-    <h2>Sign up for our waitlist below!</h2>
-    <p class="form-description">
-        Thank you for your interest in LabFlow! Due to high demand, sign up for our waitlist below. We are excited to share our free resource to help you focus on what really matters: making discoveries to change the world!
-    </p>
-    <div class="form-container">
-        <form id="waitlist-form" class="integrated-form" action="https://formspree.io/f/myzzwnjk" method="POST">
-            <div class="form-group">
-                <label for="email" class="required">Email Address</label>
-                <input type="email" id="email" name="email" required placeholder="Your email">
-            </div>
-            
-            <div class="form-group">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" name="name" placeholder="Your name">
-            </div>
-            
-            <div class="form-group">
-                <label for="affiliation">Affiliation/Organization</label>
-                <input type="text" id="affiliation" name="affiliation" placeholder="Your organization">
-            </div>
-            
-            <div class="form-group">
-                <label>Field of Research/Expertise</label>
-                <div class="checkbox-section">
-                    <div class="checkbox-option">
-                        <input type="checkbox" id="field-biology" name="field[]" value="Biology">
-                        <label for="field-biology">Biology</label>
-                    </div>
-                    <div class="checkbox-option">
-                        <input type="checkbox" id="field-chemistry" name="field[]" value="Chemistry">
-                        <label for="field-chemistry">Chemistry</label>
-                    </div>
-                    <div class="checkbox-option">
-                        <input type="checkbox" id="field-physics" name="field[]" value="Physics">
-                        <label for="field-physics">Physics</label>
-                    </div>
-                    <div class="checkbox-option">
-                        <input type="checkbox" id="field-engineering" name="field[]" value="Engineering">
-                        <label for="field-engineering">Engineering</label>
-                    </div>
-                    <div class="checkbox-option">
-                        <input type="checkbox" id="field-other" name="field[]" value="Other">
-                        <label for="field-other">Other</label>
-                        <input type="text" id="field-other-text" name="field_other" 
-                               placeholder="Please specify" 
-                               class="other-input">
-                    </div>
-                </div>
-            </div>
-            <button type="submit" class="submit-button">Sign Up Now</button>
-            <div id="form-success"></div>
-        </form>
-    </div>
-</section>
-
-<!-- Add these styles to your existing CSS -->
-<style>
-/* Keep all your existing styles and add/update these specific ones */
-.checkbox-section {
-    margin-top: 1rem;
-    padding-left: 0.5rem;
-}
-
-.checkbox-option {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 0.75rem;
-    position: relative;
-}
-
-.checkbox-option input[type="checkbox"] {
-    width: 1.25rem;
-    height: 1.25rem;
-    margin: 0;
-    cursor: pointer;
-}
-
-.checkbox-option label {
-    font-size: 1rem;
-    cursor: pointer;
-    user-select: none;
-    padding-left: 0.25rem;
-}
-
-.other-input {
-    display: none;
-    width: calc(100% - 2.5rem);
-    margin-top: 0.5rem;
-    margin-left: 2rem;
-    padding: 0.5rem;
-    border: 1px solid #e5e7eb;
-    border-radius: 0.375rem;
-}
-
-#field-other:checked ~ .other-input {
-    display: block;
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.submit-button {
-    margin-top: 2rem;
-}
-</style>
-
-<!-- Keep your existing JavaScript -->
+</body>
+</html>
