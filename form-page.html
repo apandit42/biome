@@ -24,7 +24,9 @@
             padding: 0;
             box-sizing: border-box;
         }
-
+        html {
+    scroll-behavior: smooth;
+}
         body {
             font-family: 'Inter', system-ui, -apple-system, sans-serif;
             line-height: 1.5;
@@ -33,7 +35,34 @@
             -moz-osx-font-smoothing: grayscale;
             overflow-x: hidden;
         }
+.how-it-works-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all 0.3s;
+    margin-bottom: 2rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
 
+.how-it-works-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.how-it-works-btn i {
+    transition: transform 0.3s;
+}
+
+.how-it-works-btn:hover i {
+    transform: translateY(2px);
+}
         .hero {
             min-height: 90vh;
             background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
@@ -574,6 +603,10 @@
         <p class="hero-subtitle">
             Save 20+ hours weekly with AI-powered protocol management
         </p>
+        <a href="#how-it-works" class="how-it-works-btn">
+    <span>How It Works</span>
+    <i class="fas fa-chevron-down"></i>
+    </a>
 
         <div class="email-capture">
             <form class="email-form" action="https://formspree.io/f/myzzwnjk" method="POST">
@@ -686,7 +719,7 @@
         </div>
     </section>
 
-        <section class="flow-section">
+    <section id="how-it-works" class="flow-section">
     <div class="section-header">
         <h2>Transform Your Lab Workflow</h2>
         <p>3 simple steps to revolutionize your protocol management</p>
