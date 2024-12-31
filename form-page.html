@@ -38,22 +38,23 @@
 .how-it-works-btn {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
+    gap: 0.75rem;
+    background: white;
+    color: var(--primary-color);
     text-decoration: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.5rem;
-    font-weight: 500;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    font-weight: 600;
+    font-size: 1.1rem;
     transition: all 0.3s;
-    margin-bottom: 2rem;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 1.5rem 0 2.5rem 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .how-it-works-btn:hover {
-    background: rgba(255, 255, 255, 0.2);
     transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background: #f8fafc;
 }
 
 .how-it-works-btn i {
@@ -604,9 +605,9 @@
             Save 20+ hours weekly with AI-powered protocol management
         </p>
         <a href="#how-it-works" class="how-it-works-btn">
-    <span>How It Works</span>
-    <i class="fas fa-chevron-down"></i>
-    </a>
+    <span>Watch Quick Demo</span>
+    <i class="fas fa-play-circle"></i>
+</a>
 
         <div class="email-capture">
             <form class="email-form" action="https://formspree.io/f/myzzwnjk" method="POST">
