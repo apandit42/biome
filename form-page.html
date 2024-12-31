@@ -39,22 +39,52 @@
     display: inline-flex;
     align-items: center;
     gap: 0.75rem;
-    background: white;
+    background: rgba(255, 255, 255, 0.95);
     color: var(--primary-color);
     text-decoration: none;
-    padding: 1rem 2rem;
-    border-radius: 2rem;
+    padding: 1.25rem 2.5rem;
+    border-radius: 100px;
     font-weight: 600;
-    font-size: 1.1rem;
-    transition: all 0.3s;
-    margin: 1.5rem 0 2.5rem 0;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-size: 1.125rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 3rem;
+}
+
+.how-it-works-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 100%);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.how-it-works-btn:hover::before {
+    transform: translateX(100%);
 }
 
 .how-it-works-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    background: #f8fafc;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    background: white;
+}
+
+.how-it-works-btn span {
+    position: relative;
+    z-index: 1;
+}
+
+.how-it-works-btn i {
+    font-size: 1.25rem;
+    position: relative;
+    z-index: 1;
+    color: #4F46E5;
 }
 
 .how-it-works-btn i {
@@ -151,6 +181,23 @@
             from { transform: translateY(20px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
         }
+        .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.hero h1 {
+    margin-bottom: 0;  /* Reset margin since we're using gap */
+}
+
+.hero-subtitle {
+    margin-bottom: 0;  /* Reset margin since we're using gap */
+}
 
         .hero-subtitle {
             font-size: 1.25rem;
@@ -600,10 +647,16 @@
             Built at Stanford Bioengineering
         </div>
         
-        <h1>Your AI Lab Assistant</h1>
-        <p class="hero-subtitle">
-            Save 20+ hours weekly with AI-powered protocol management
-        </p>
+        <div class="hero-content">
+    <h1>Your AI Lab Assistant</h1>
+    <p class="hero-subtitle">
+        Save 20+ hours weekly with AI-powered protocol management
+    </p>
+    <a href="#how-it-works" class="how-it-works-btn">
+        <span>Watch Quick Demo</span>
+        <i class="fas fa-play-circle"></i>
+    </a>
+</div>
         <a href="#how-it-works" class="how-it-works-btn">
     <span>Watch Quick Demo</span>
     <i class="fas fa-play-circle"></i>
